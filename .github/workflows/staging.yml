@@ -13,10 +13,13 @@ jobs:
 
       - name: Run Build/Validation Check
         run: |
-          echo "Running pre-deployment checks..."
-          # Here you could add HTML linting, syntax checks, or tests
-          ls -la
-          echo "Validation complete successfully."
+         - name: Run Build and HTML Linter Check
+      run: |
+        echo "Running pre-deployment checks..."
+        npm install -g htmlhint
+        htmlhint "**/*.html"
+        ls -la
+        echo "Linting complete successfully."
 
       - name: Deploy to EC2 Staging Directory
         uses: appleboy/ssh-action@master
