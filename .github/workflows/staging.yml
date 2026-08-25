@@ -13,7 +13,7 @@ jobs:
 
   
       - name: Run Build and HTML Linter Check
-      run: |
+          run: |
         echo "Running pre-deployment checks..."
         npm install -g htmlhint
         htmlhint "**/*.html"
