@@ -11,9 +11,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Run Build/Validation Check
-        run: |
-         - name: Run Build and HTML Linter Check
+  
+      - name: Run Build and HTML Linter Check
       run: |
         echo "Running pre-deployment checks..."
         npm install -g htmlhint
