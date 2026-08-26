@@ -11,14 +11,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-  
       - name: Run Build and HTML Linter Check
         run: |
-        echo "Running pre-deployment checks..."
-        npm install -g htmlhint
-        htmlhint "**/*.html"
-        ls -la
-        echo "Linting complete successfully."
+          echo "Running pre-deployment checks..."
+          npm install -g htmlhint
+          htmlhint "**/*.html"
+          ls -la
+          echo "Linting complete successfully."
 
       - name: Deploy to EC2 Staging Directory
         uses: appleboy/ssh-action@master
